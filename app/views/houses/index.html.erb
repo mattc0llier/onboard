@@ -1,25 +1,21 @@
 
-<article class"row">
-	<section class="rooms">
+<section class="rooms">
 
-			<% @houses.each do |house| %>
+		<% @houses.each do |house| %>
 
-				<div class="room">
+			<div class="room">
 
-					<h2>
-						<%= link_to house.title, house_path(house.id) %>
-					</h2>
+				<h2>
+					<%= link_to house.title, house_path(house.id) %>
+				</h2>
 
-					<p><%=  house.address %></p>
+				<p><%=  house.address %></p>
 
-					<p>£<%=  house.price_in_pence / 100 %>/wk</p>
+				<p>£<%=  house.price_in_pence / 100 %>/wk</p>
 
 
-				</div>
+			</div>
 
-			<% end %>
+		<% end %>
 
-	</section>
-</article>
-
-<%= @houses.inspect %>
+</section>
