@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
   root "houses#index"
 
-  resources :houses
+  resources :houses do
+  	resources :orders, only: [:new, :create]
+  end
 
   resources :users do
     #this resource depends on a user
-  	resources :houses
+  	resources :houses, only: [:show, :index]
+  	resources :orders, only: [:show]
     
   end
 

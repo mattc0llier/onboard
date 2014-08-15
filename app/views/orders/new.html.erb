@@ -1,4 +1,4 @@
-<%= simple_form_for [@user, @order], url: orders_path, method: :post do |f| %>
+<%= simple_form_for [@user, @order], url: house_orders_path(@house.id), method: :post do |f| %>
 	
 	<span class="payment-errors"></span>
 
