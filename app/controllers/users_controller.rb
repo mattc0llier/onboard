@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Ooops, try again"
       render :new
+    end
   end
 
   def edit

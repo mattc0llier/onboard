@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, confirmation: true, length: { minimum: 8 }
 
 	has_secure_password
+
+	# Gives us @user.orders e.g @user.orders.new, @user.order.all
+	has_many  :orders
+	has_many  :houses
 end
