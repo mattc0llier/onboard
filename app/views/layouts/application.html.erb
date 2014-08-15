@@ -24,13 +24,15 @@
     </form>
 
     <nav class="seven columns">
-      <% link_to "Dashboard", "#" %>
-      <% link_to "Add a room", new_house_path %>
-      <% link_to "Orders", "#" %>
-      <% link_to "Log out", "#" %>
-
-      <%= link_to "Sign up", "#" %>
-      <%= link_to "Sign in", "#" %>
+      <% if current_user? %>
+        <%= link_to "Dashboard", "#" %>
+        <%= link_to "Add a room", new_house_path %>
+        <%= link_to "Orders", orders_path %>
+        <%= link_to "Log out", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Log in", new_session_path %>
+      <% end %>
     </nav>
   </header>
 
