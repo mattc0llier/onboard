@@ -55,4 +55,4 @@ group :production do
 end
 
 
-ruby "1.9.3"
+ruby "2.1.2"

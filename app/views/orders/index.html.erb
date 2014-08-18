@@ -1,5 +1,18 @@
-<% @orders.each do |order| %>
-	
-	<%= order.house.title %>
+<section class= "room">
 
-<% end %>
+	<%= @orders.each do |order| %>
+		<div class="room">
+
+			<h2><%= order.house.title %></h2>
+		
+			<p><%= order.house.address %></p>
+
+			<p><%= order.house.price_in_pence %></p>
+
+			<p><%= image_tag order.house.image.url %></p>
+			
+		</div>
+	
+	<% end %>
+
+</section>

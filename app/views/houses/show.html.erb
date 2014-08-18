@@ -1,32 +1,35 @@
-<h2>
-	<%= @house.title %>
-</h2>
+<section class= "room">
 
-<div class="address">
+	<h2>
+		<%= @house.title %>
+	</h2>
 
-	<%= @house.address %>
+	<div class="address">
 
-</div>
+		<%= @house.address %>
 
-<div class="image">
-	
-			<%= image_tag @house.image.url %>
-</div>
+	</div>
 
-<div class="map" data-lat='<%= @house.latitude %>' data-lng='<%= @house.longitude%>' >
+	<div class="image">
+		
+				<%= image_tag @house.image.url %>
+	</div>
 
-</div>
+	<div class="map" data-lat='<%= @house.latitude %>' data-lng='<%= @house.longitude%>' >
 
-<div class="description">
-	<%= @house.description %>
-</div>
+	</div>
 
-<div class="user">
-	<p>Added by <%= @house.user.username %></p>
-</div>
+	<div class="description">
+		<%= @house.description %>
+	</div>
 
-<div class="actions">
-	<%= link_to "Book room", new_house_order_path(@house.id), class: 'button' %>
-	<%= link_to "Edit", edit_house_path(@house.id), class: 'button' %>
-	<%= link_to "Destroy", house_path(@house.id), method: :delete, class: 'button' %>
-</div>
+	<div class="user">
+		<p>Added by <%= @house.user.username %></p>
+	</div>
+
+	<div class="actions">
+		<%= link_to "Book room", new_house_order_path(@house.id), class: 'button' %>
+		<%= link_to "Edit", edit_house_path(@house.id), class: 'button' %>
+		<%= link_to "Delete", house_path(@house.id), method: :delete, class: 'button' %>
+	</div>
+</section>
